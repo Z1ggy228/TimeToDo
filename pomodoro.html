@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./images/pomodoro/favicon.png" />
+    <link rel="icon" type="image/png" href="./images/pomodoro/favicon.png" />
+    <title>Помодоро</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/pomodoro.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <a href="./index.html" class="header__logo">
+              <img src="./images/logo.svg" alt="logo" width="250" />
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="nav__list-item">
+                  <a href="./todo.html" class="nav__list-link">
+                    <img src="./images/todo/todo.png" width="20" alt="" />
+                    ToDo List
+                  </a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="./pomodoro.html" class="nav__list-link">
+                    <img src="./images/pomodoro/favicon.png" width="20" alt="" />
+                    Таймер Помидора
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="header__user">
+              <!-- Same login button and ID -->
+              <button class="header__user-btn" id="open-login-btn">
+                <img src="./images/user-icon.svg" alt="user-icon" width="40" />
+              </button>
+            </div>
+            <!-- Modal Window -->
+            <div class="modal" id="login-modal">
+              <div class="modal__box">
+                <button class="modal__close-btn" id="close-login-btn"></button>
+                <h2 class="modal__title">Войдите в аккаунт</h2>
+                <form class="modal__form">
+                  <input class="modal__form-input" type="text" name="username" placeholder="Введите имя" />
+                  <input class="modal__form-input" type="password" name="password" placeholder="Введите пароль" />
+                  <button class="modal__form-btn" type="submit">Войти</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="pomodoro">
+          <div class="pomodoro__container">
+            <div class="timer">
+              <div class="header__pomodoro">
+                <h1 class="header__title">Таймер помодоро</h1>
+                <img src="./images/pomodoro/favicon.png" alt="Логотип" width="32" />
+              </div>
+              <div class="navigation">
+                <button class="navigation__btn navigation__btn--active" data-use="work">Помодоро</button>
+                <button class="navigation__btn" data-use="break">Перерыв</button>
+                <button class="navigation__btn" data-use="relax">Отдых</button>
+              </div>
+              <p class="time"><span class="time__minutes">25</span>:<span class="time__seconds">00</span></p>
+              <div class="control">
+                <button class="control__btn control__btn-start">Старт</button>
+                <button class="control__btn control__btn-stop">Стоп</button>
+                <button class="control__btn control__btn-reset">Сбросить</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p class="footer__copyright">© 2024 TimeToDo. Все права защищены.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="./js/modalWindow.js"></script>
+    <script defer src="./js/pomodoro.js"></script>
+  </body>
+</html>

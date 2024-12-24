@@ -1,0 +1,370 @@
+/* ================================================ Global styles ================================================*/
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --text-color: #333333;
+  --primary-color: #87ceeb;
+  --secondary-color: #ff4c4c;
+  --background-color: #f5f5f5;
+  --text-size: 17px;
+}
+
+html,
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1260px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* ================================================ Header section ================================================*/
+.header {
+  padding: 20px 0;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  width: 150px;
+}
+
+.header__nav-list {
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.nav__list-link {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-color);
+  padding-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.nav__list-link:hover {
+  color: var(--primary-color);
+}
+
+.nav__list-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav__list-link:hover::before {
+  width: 100%;
+}
+
+.header__user {
+  transition: transform 0.3s;
+}
+
+.header__user:hover {
+  transform: scale(1.03);
+}
+
+/* ================================================ Modal window ================================================*/
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 99998;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__box {
+  max-width: 350px;
+  padding: 50px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  transform: scale(0);
+  transition: transform 0.8s;
+  position: relative;
+}
+
+.modal.open .modal__box {
+  transform: scale(1);
+}
+
+.modal__close-btn::before,
+.modal__close-btn::after {
+  content: '';
+  position: absolute;
+  top: 12.5px;
+  right: 25px;
+  width: 5px;
+  height: 25px;
+  background: var(--color-black);
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.modal__close-btn::after {
+  transform: rotate(-45deg);
+}
+
+.modal__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__form-input {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.modal__form-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal__form-btn:hover {
+  background-color: #1e54b5; /* Немного затемнённый основной цвет */
+}
+
+/* ================================================ Index ================================================*/
+
+/* Общие стили для секций */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+/* Секция Hero */
+.hero {
+  padding: 60px 0;
+  background-color: var(--background-color);
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Добавлено для адаптивности */
+}
+
+.hero__content {
+  max-width: 600px;
+  flex: 1 1 50%; /* Обновлено для адаптивности */
+}
+
+.hero__content-title {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.hero__content-text {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #666666;
+}
+
+.hero__btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.hero__btn:hover {
+  background-color: #1e54b5;
+}
+
+.hero__img-box {
+  flex: 1 1 40%; /* Обновлено для адаптивности */
+  text-align: center;
+}
+
+.hero__image {
+  max-width: 100%;
+  height: auto;
+  /* Ограничиваем высоту изображения */
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Секция "Почему TimeToDo?" */
+.why-timetodo {
+  padding: 60px 0;
+}
+
+.why-timetodo__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.why-timetodo__item {
+  flex: 1;
+  text-align: center;
+}
+
+.why-timetodo__icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.why-timetodo__title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.why-timetodo__text {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Секция "Основные функции" */
+.features {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.features__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.features__item {
+  flex: 1;
+  text-align: center;
+}
+
+.features__icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.features__title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.features__text {
+  font-size: 16px;
+  color: #666666;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Секция "Call to Action" */
+.cta {
+  background-color: var(--primary-color);
+  padding: 60px 0;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.cta__title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.cta__btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--secondary-color);
+  color: var(--color-white);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.cta__btn:hover {
+  background-color: #e53935;
+}
+
+/* Футер */
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px 0;
+}
+
+.footer p {
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+}

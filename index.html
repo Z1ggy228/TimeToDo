@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeToDo</title>
+    <link rel="shortcut icon" href="./images/user-icon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <a href="./index.html" class="header__logo">
+              <img src="./images/logo.svg" alt="logo" width="250" />
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="nav__list-item">
+                  <a href="./todo.html" class="nav__list-link">
+                    <img src="./images/todo/todo.png" width="20" alt="" />
+                    ToDo List
+                  </a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="./pomodoro.html" class="nav__list-link">
+                    <img src="./images/pomodoro/favicon.png" width="20" alt="" />
+                    Таймер Помидора
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="header__user">
+              <!-- Button that opens the login modal -->
+              <button class="header__user-btn" id="open-login-btn">
+                <img src="./images/user-icon.svg" alt="user-icon" width="40" />
+              </button>
+            </div>
+            <!-- Modal Window -->
+            <div class="modal" id="login-modal">
+              <div class="modal__box">
+                <button class="modal__close-btn" id="close-login-btn"></button>
+                <h2 class="modal__title">Войдите в аккаунт</h2>
+                <form class="modal__form">
+                  <input class="modal__form-input" type="text" name="username" placeholder="Введите имя" />
+                  <input class="modal__form-input" type="password" name="password" placeholder="Введите пароль" />
+                  <button class="modal__form-btn" type="submit">Войти</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <main class="main">
+        <section class="main__hero hero">
+          <div class="container">
+            <div class="hero__inner">
+              <div class="hero__content">
+                <h1 class="hero__content-title">Увеличьте свою продуктивность с TimeToDo</h1>
+                <p class="hero__content-text">
+                  Добро пожаловать в TimeToDo! Наша платформа поможет вам организовать свое время и повысить
+                  эффективность работы с помощью метода Pomodoro и удобного списка задач. Начните свой путь к успеху уже
+                  сегодня!
+                </p>
+                <a href="./todo.html" class="hero__btn">Начать сейчас</a>
+              </div>
+              <div class="hero__img-box">
+                <img src="./images/hero/hero-bg.png" alt="Продуктивность" class="hero__image" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Why TimeToDo Section -->
+        <section class="why-timetodo">
+          <div class="container">
+            <h2 class="section-title">Почему TimeToDo?</h2>
+            <div class="why-timetodo__inner">
+              <div class="why-timetodo__item">
+                <img src="./images/hero/productivity.png" alt="Эффективность" class="why-timetodo__icon" />
+                <h3 class="why-timetodo__title">Повышение продуктивности</h3>
+                <p class="why-timetodo__text">
+                  Используйте проверенные техники управления временем для достижения максимальной эффективности.
+                </p>
+              </div>
+              <div class="why-timetodo__item">
+                <img src="./images/hero/schedule.png" alt="Организация" class="why-timetodo__icon" />
+                <h3 class="why-timetodo__title">Удобная организация задач</h3>
+                <p class="why-timetodo__text">Создавайте, отслеживайте и управляйте своими задачами в одном месте.</p>
+              </div>
+              <div class="why-timetodo__item">
+                <img src="./images/hero/concentrate.png" alt="Фокус" class="why-timetodo__icon" />
+                <h3 class="why-timetodo__title">Улучшение фокуса</h3>
+                <p class="why-timetodo__text">Метод Pomodoro поможет вам сосредоточиться и избежать выгорания.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+          <div class="container">
+            <h2 class="section-title">Основные функции</h2>
+            <div class="features__inner">
+              <div class="features__item">
+                <img src="./images/hero/organisation.png" alt="Список задач" class="features__icon" />
+                <h3 class="features__title">Список задач</h3>
+                <p class="features__text">
+                  Управляйте своими повседневными задачами с помощью нашего интуитивно понятного списка дел.
+                </p>
+              </div>
+              <div class="features__item">
+                <img src="./images/hero/timer.png" alt="Таймер Помидора" class="features__icon" />
+                <h3 class="features__title">Таймер Pomodoro</h3>
+                <p class="features__text">Применяйте технику Pomodoro для эффективного управления временем.</p>
+              </div>
+              <!-- <div class="features__item">
+                <img src="./images/hero/bar-chart.png" alt="Статистика" class="features__icon" />
+                <h3 class="features__title">Статистика и отчеты</h3>
+                <p class="features__text">
+                  Отслеживайте свой прогресс и анализируйте результаты для постоянного улучшения.
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="container">
+          <p class="footer__copyright">© 2024 TimeToDo. Все права защищены.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script defer src="./js/modalWindow.js"></script>
+  </body>
+</html>

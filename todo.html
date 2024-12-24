@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./images/todo/todo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/todo.css" />
+    <title>ToDo List</title>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header__inner">
+            <a href="./index.html" class="header__logo">
+              <img src="./images/logo.svg" alt="logo" width="250" />
+            </a>
+            <nav class="header__nav">
+              <ul class="header__nav-list">
+                <li class="nav__list-item">
+                  <a href="./todo.html" class="nav__list-link">
+                    <img src="./images/todo/todo.png" width="20" alt="" />
+                    ToDo List
+                  </a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="./pomodoro.html" class="nav__list-link">
+                    <img
+                      src="./images/pomodoro/favicon.png"
+                      width="20"
+                      alt=""
+                    />
+                    Таймер Помидора
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div class="header__user">
+              <!-- Same login button and ID -->
+              <button class="header__user-btn" id="open-login-btn">
+                <img src="./images/user-icon.svg" alt="user-icon" width="40" />
+              </button>
+            </div>
+            <!-- The same modal structure -->
+            <div class="modal" id="login-modal">
+              <div class="modal__box">
+                <button class="modal__close-btn" id="close-login-btn"></button>
+                <h2 class="modal__title">Войдите в аккаунт</h2>
+                <form class="modal__form">
+                  <input
+                    class="modal__form-input"
+                    type="text"
+                    name="username"
+                    placeholder="Введите имя"
+                  />
+                  <input
+                    class="modal__form-input"
+                    type="password"
+                    name="password"
+                    placeholder="Введите пароль"
+                  />
+                  <button class="modal__form-btn" type="submit">Войти</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="todo">
+          <ul class="todo__drawer">
+            <button class="todo__drawer-menu-btn common-btn">
+              <img src="./images/todo/menu_btn.svg" alt="menu" />
+            </button>
+            <li class="todo__drawer-item active" data-type="allTime">
+              <img src="./images/todo/user_light.svg" alt="all tasks" />
+              <p class="todo__text">Все задачи</p>
+            </li>
+            <li class="todo__drawer-item" data-type="freeTime">
+              <img src="./images/todo/sun_light.svg" alt="free time" />
+              <p class="todo__text">Свободное время</p>
+            </li>
+            <li class="todo__drawer-item" data-type="workTime">
+              <img src="./images/todo/date_range_duotone_line.svg" alt="work" />
+              <p class="todo__text">Рабочие дела</p>
+            </li>
+            <li class="todo__drawer-item" data-type="homeTime">
+              <img src="./images/todo/home_light.svg" alt="home" />
+              <p class="todo__text">Домашние дела</p>
+            </li>
+            <li class="todo__drawer-item" data-type="favoriteTime">
+              <img id="img-all" src="./images/todo/star_1.svg" alt="favorite" />
+              <p class="todo__text">Избранное</p>
+            </li>
+          </ul>
+          <div class="todo__tasks">
+            <div class="tasks__header">
+              <h2 class="todo__title">Список задач</h2>
+              <div class="header__btns">
+                <div class="header__sort">
+                  <button class="header__sort-btn common-btn">
+                    <img
+                      src="./images/todo/collapse_light.svg"
+                      alt="sorting"
+                    /><span>Сортировка</span>
+                  </button>
+                </div>
+                <div class="header__clear">
+                  <button class="header__clear-btn common-btn">
+                    <img src="./images/todo/order_light.svg" alt="clear-list" />
+                    <span>Очистить список</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="tasks__main">
+              <div class="main__input">
+                <input
+                  class="create-task-input"
+                  type="text"
+                  placeholder="Пример названия задачи..."
+                />
+                <button class="create-task-btn">Создать задачу</button>
+              </div>
+              <div class="main__list task-list"></div>
+            </div>
+            <div class="tasks__footer">
+              <input type="checkbox" id="accordeon" />
+              <label for="accordeon" class="footer__resolved-tasks">
+                <!-- <img src="./images/accordeon.png" alt="" width="12"> -->
+                <p class="footer__title">Выполненные задачи</p>
+              </label>
+              <div class="resolved__tasks-list tasks-list"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <p class="footer__copyright">
+            © 2024 TimeToDo. Все права защищены.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/modalWindow.js" defer></script>
+    <script src="./js/todo.js" defer></script>
+  </body>
+</html>
